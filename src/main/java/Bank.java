@@ -8,8 +8,14 @@
  * @see <a href="https://cs125.cs.illinois.edu/lab/5/">Lab 5 Description</a>
  */
 public class Bank {
-
+    /**
+     * sad
+     */
     public String bankName;
+
+    /**
+     * sdfsd.
+     */
 
     public Bank() {
         bankName = "Illini Bank";
@@ -29,6 +35,12 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (bankAccount.getAccountBalance() > amount) {
+            bankAccount.setAccountBalance(bankAccount.getAccountBalance() - amount);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -45,6 +57,8 @@ public class Bank {
         /*
          * Implement this function
          */
+        bankAccount.setAccountBalance(bankAccount.getAccountBalance() + amount);
+        return true;
     }
 
     /**
@@ -64,6 +78,13 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (source.getAccountBalance() > amount) {
+            source.setAccountBalance(source.getAccountBalance() - amount);
+            destination.setAccountBalance(destination.getAccountBalance() + amount);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -77,8 +98,12 @@ public class Bank {
         /*
          * Implement this function
          */
+        bankAccount.setOwnerName(name);
     }
 
+    /**
+     * lsdfs.
+     */
     public static int totalAccounts = 0;
     /**
      * Uses static variable to get number of bank accounts opened.
@@ -89,6 +114,7 @@ public class Bank {
         /*
          * Implement this function
          */
+        return getNumberOfAccounts();
     }
 
     /**
@@ -99,6 +125,10 @@ public class Bank {
     @SuppressWarnings("checkstyle:magicnumber")
     public static void main(final String[] unused) {
         Bank bank = new Bank();
+        final double thousssnad = 1000.0;
+        final double fivethousnad = 5000.0;
+        final double twohunned = 200.0;
+        final double treefiddy = 350.0;
         System.out.println("Welcome to " + bank.bankName);
         System.out.println("We are excited to have you banking with us!\n\n");
 
@@ -110,14 +140,14 @@ public class Bank {
         System.out.println("Bank account for Johy Ive created\n\n");
 
         // Deposit money to both accounts and print new balance
-        bank.depositMoney(account1, 1000.0);
-        bank.depositMoney(account2, 5000.0);
+        bank.depositMoney(account1, thousssnad);
+        bank.depositMoney(account2, fivethousnad);
 
         // Withdraw money from Account 2 and print new balance
-        bank.withdrawMoney(account2, 200.0);
+        bank.withdrawMoney(account2, twohunned);
 
         // Transfer money from Account 2 to Account 1 and print new balances
-        bank.transferMoney(account2, account1, 350.0);
+        bank.transferMoney(account2, account1, treefiddy);
 
         // Print number of accounts
         System.out.print("Number of active accounts at " + bank.bankName + " are ");
